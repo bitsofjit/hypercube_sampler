@@ -1,0 +1,25 @@
+=========================================================
+	Instructions to run the script sampler.sh
+=========================================================
+Set the permission of script for the user as "execute", 
+e.g., chmod +x sampler.sh
+
+The python script is written in version 2.7. 
+Required Python Packages/Libraries are:
+sys, os.path, time, numpy, scipy, math, warnings, matplotlib.pyplot, itertools, mpl_toolkits.mplot3d, matplotlib.patches, mpl_toolkits.mplot3d.art3d, 
+
+Required Special Python Packages:
+** pyDOE, numba (for speed-up) **
+
+Execute the script as:
+
+./sampler.sh <input_file> <output_file> <n_results>
+
+The input_file should be kept in the same directory as the script. 
+The script calls sampler.py with the command line arguments and 
+generates the output_file upon termination.
+
+For 3D case, if the requested n_results <= 100, the script also plots the 
+samples as vectors and saves the plot.
+
+The provided the "Constraint()" class has been used to parse the input and evaluate the constraints to check feasibility.  

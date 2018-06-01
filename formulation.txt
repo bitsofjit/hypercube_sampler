@@ -1,0 +1,13 @@
+4
+0.1 0.15 0.5 0.05
+# Volume fraction of 4 ingredients (binder A, binder B, solvent, crosslinker). There is a fifth ingredient, implicitly, through an incompressibility constraint
+# Implicit balance component is non-negative
+1.0 - x[0] - x[1] - x[2] - x[3] >= 0.0
+# Crosslinker fraction on a solids basis at least 10%
+x[3] / (x[0] + x[1]) - 0.1 >= 0.0
+# Crosslinker fraction on a solids basis shouldn't be greater than 15%
+0.15 - x[3] / (x[0] + x[1]) >= 0.0
+# Total solvent fraction must be 50% to be processable
+x[2] - 0.5 >= 0.0
+# Total binder content on a solids basis should be greater than 80%
+(x[0] + x[1]) / (x[0] + x[1] + x[3]) - 0.8 >= 0.0
